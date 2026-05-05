@@ -1,0 +1,1281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mount Roof Services | Tauranga Bay of Plenty</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --charcoal: #1a1a1a;
+    --steel: #2c2f35;
+    --mid: #3e4249;
+    --slate: #6b7280;
+    --silver: #c8cdd6;
+    --cream: #f5f2ed;
+    --white: #ffffff;
+    --accent: #d4822a;
+    --accent-light: #e8a55a;
+    --accent-muted: #2a1e10;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--charcoal);
+    color: var(--cream);
+    overflow-x: hidden;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 1.25rem 3rem;
+    background: rgba(26,26,26,0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    transition: all 0.3s ease;
+  }
+
+  .nav-logo {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.5rem;
+    letter-spacing: 0.1em;
+    color: var(--white);
+    text-decoration: none;
+  }
+  .nav-logo span { color: var(--accent); }
+
+  .nav-links { display: flex; gap: 2rem; list-style: none; }
+  .nav-links a {
+    color: var(--silver);
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 400;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--accent); }
+
+  .nav-cta {
+    background: var(--accent);
+    color: var(--white) !important;
+    padding: 0.6rem 1.4rem;
+    border-radius: 3px;
+    font-weight: 500 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.08em !important;
+    transition: background 0.2s !important;
+  }
+  .nav-cta:hover { background: var(--accent-light) !important; color: var(--charcoal) !important; }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding-top: 80px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 5rem 3rem 5rem 3rem;
+    position: relative;
+    z-index: 2;
+  }
+
+  .hero-eyebrow {
+    font-size: 0.75rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--accent);
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  .hero-eyebrow::before {
+    content: '';
+    display: block;
+    width: 40px;
+    height: 1px;
+    background: var(--accent);
+  }
+
+  .hero-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(4rem, 7vw, 7.5rem);
+    line-height: 0.92;
+    letter-spacing: 0.02em;
+    color: var(--white);
+    margin-bottom: 2rem;
+  }
+  .hero-title em {
+    font-family: 'DM Serif Display', serif;
+    font-style: italic;
+    color: var(--accent);
+  }
+
+  .hero-sub {
+    font-size: 1.05rem;
+    color: var(--silver);
+    line-height: 1.7;
+    max-width: 420px;
+    margin-bottom: 3rem;
+    font-weight: 300;
+  }
+
+  .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+
+  .btn-primary {
+    background: var(--accent);
+    color: var(--white);
+    padding: 0.9rem 2rem;
+    border: none;
+    border-radius: 3px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.2s;
+  }
+  .btn-primary:hover { background: var(--accent-light); transform: translateY(-2px); }
+
+  .btn-outline {
+    background: transparent;
+    color: var(--silver);
+    padding: 0.9rem 2rem;
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 3px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.2s;
+  }
+  .btn-outline:hover { border-color: var(--accent); color: var(--accent); }
+
+  .hero-stats {
+    display: flex;
+    gap: 2.5rem;
+    margin-top: 3.5rem;
+    padding-top: 2.5rem;
+    border-top: 1px solid rgba(255,255,255,0.08);
+  }
+  .hero-stat-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2.8rem;
+    color: var(--accent);
+    line-height: 1;
+  }
+  .hero-stat-label {
+    font-size: 0.75rem;
+    color: var(--slate);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-top: 0.25rem;
+  }
+
+  .hero-right {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-img-container {
+    position: absolute;
+    inset: 0;
+    background: var(--steel);
+  }
+
+  .hero-img-container::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, var(--charcoal) 0%, transparent 30%),
+                linear-gradient(0deg, var(--charcoal) 0%, transparent 25%);
+  }
+
+  .hero-roof-svg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.6;
+  }
+
+  /* Decorative roof silhouette SVG bg */
+  .roof-pattern {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  /* TRUST BAR */
+  .trust-bar {
+    background: var(--steel);
+    border-top: 1px solid rgba(255,255,255,0.06);
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    padding: 1.25rem 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+    flex-wrap: wrap;
+  }
+  .trust-item {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-size: 0.78rem;
+    color: var(--silver);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-weight: 400;
+  }
+  .trust-dot {
+    width: 6px;
+    height: 6px;
+    background: var(--accent);
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  /* SECTION LAYOUT */
+  section { padding: 6rem 3rem; }
+  .section-inner { max-width: 1200px; margin: 0 auto; }
+
+  .section-label {
+    font-size: 0.72rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--accent);
+    font-weight: 500;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+  .section-label::before {
+    content: '';
+    display: block;
+    width: 24px;
+    height: 1px;
+    background: var(--accent);
+  }
+
+  .section-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(2.5rem, 5vw, 4.5rem);
+    line-height: 0.95;
+    color: var(--white);
+    margin-bottom: 1.5rem;
+    letter-spacing: 0.02em;
+  }
+  .section-title em {
+    font-family: 'DM Serif Display', serif;
+    font-style: italic;
+    color: var(--accent);
+  }
+
+  /* SERVICES */
+  #services { background: var(--charcoal); }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: rgba(255,255,255,0.08);
+    margin-top: 4rem;
+    border: 1px solid rgba(255,255,255,0.08);
+  }
+
+  .service-card {
+    background: var(--charcoal);
+    padding: 2.5rem;
+    position: relative;
+    overflow: hidden;
+    transition: background 0.3s;
+    cursor: default;
+  }
+  .service-card:hover { background: var(--steel); }
+  .service-card:hover .service-num { color: var(--accent); }
+
+  .service-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 4rem;
+    color: rgba(255,255,255,0.05);
+    line-height: 1;
+    position: absolute;
+    top: 1rem;
+    right: 1.5rem;
+    transition: color 0.3s;
+  }
+
+  .service-icon {
+    width: 44px;
+    height: 44px;
+    background: var(--accent-muted);
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+  }
+
+  .service-name {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.6rem;
+    letter-spacing: 0.05em;
+    color: var(--white);
+    margin-bottom: 0.75rem;
+    line-height: 1.1;
+  }
+
+  .service-desc {
+    font-size: 0.9rem;
+    color: var(--slate);
+    line-height: 1.7;
+    font-weight: 300;
+  }
+
+  /* ABOUT */
+  #about { background: var(--steel); }
+
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: center;
+  }
+
+  .about-visual {
+    position: relative;
+  }
+
+  .about-box {
+    background: var(--charcoal);
+    border: 1px solid rgba(255,255,255,0.08);
+    padding: 3rem;
+    position: relative;
+  }
+  .about-box::before {
+    content: '';
+    position: absolute;
+    top: -1px;
+    left: 2rem;
+    width: 60px;
+    height: 3px;
+    background: var(--accent);
+  }
+
+  .about-quote {
+    font-family: 'DM Serif Display', serif;
+    font-style: italic;
+    font-size: 1.4rem;
+    color: var(--cream);
+    line-height: 1.5;
+    margin-bottom: 1.5rem;
+  }
+
+  .about-attr {
+    font-size: 0.8rem;
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    font-weight: 500;
+  }
+
+  .floating-badge {
+    position: absolute;
+    bottom: -1.5rem;
+    right: -1.5rem;
+    background: var(--accent);
+    padding: 1.25rem 1.5rem;
+    text-align: center;
+  }
+  .badge-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2.5rem;
+    color: var(--white);
+    line-height: 1;
+    display: block;
+  }
+  .badge-label {
+    font-size: 0.65rem;
+    color: rgba(255,255,255,0.8);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    display: block;
+    margin-top: 0.25rem;
+  }
+
+  .about-body p {
+    font-size: 1rem;
+    color: var(--silver);
+    line-height: 1.8;
+    font-weight: 300;
+    margin-bottom: 1.25rem;
+  }
+
+  .about-features {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-top: 2rem;
+  }
+
+  .about-feature {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+  .feature-check {
+    width: 18px;
+    height: 18px;
+    background: var(--accent);
+    border-radius: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+  .about-feature span {
+    font-size: 0.85rem;
+    color: var(--silver);
+    line-height: 1.4;
+  }
+
+  /* REVIEWS */
+  #reviews { background: var(--charcoal); }
+
+  .reviews-header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin-bottom: 3.5rem;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+  }
+
+  .google-rating {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background: var(--steel);
+    border: 1px solid rgba(255,255,255,0.08);
+    padding: 1rem 1.5rem;
+    border-radius: 4px;
+  }
+  .rating-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2.5rem;
+    color: var(--white);
+    line-height: 1;
+  }
+  .stars {
+    color: #f59e0b;
+    font-size: 1.1rem;
+    letter-spacing: 2px;
+    display: block;
+  }
+  .rating-label {
+    font-size: 0.72rem;
+    color: var(--slate);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    display: block;
+    margin-top: 2px;
+  }
+
+  .reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+
+  .review-card {
+    background: var(--steel);
+    border: 1px solid rgba(255,255,255,0.06);
+    padding: 2rem;
+    border-radius: 2px;
+    position: relative;
+    transition: border-color 0.2s;
+  }
+  .review-card:hover { border-color: rgba(212,130,42,0.3); }
+
+  .review-quote-mark {
+    font-family: 'DM Serif Display', serif;
+    font-size: 4rem;
+    color: var(--accent);
+    opacity: 0.3;
+    line-height: 0.5;
+    margin-bottom: 1rem;
+  }
+
+  .review-text {
+    font-size: 0.9rem;
+    color: var(--silver);
+    line-height: 1.7;
+    font-weight: 300;
+    font-style: italic;
+    margin-bottom: 1.5rem;
+  }
+
+  .review-author {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    border-top: 1px solid rgba(255,255,255,0.06);
+    padding-top: 1.25rem;
+  }
+
+  .reviewer-avatar {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: var(--accent-muted);
+    border: 1px solid var(--accent);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1rem;
+    color: var(--accent);
+    flex-shrink: 0;
+  }
+
+  .reviewer-name {
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--cream);
+  }
+  .reviewer-stars { color: #f59e0b; font-size: 0.75rem; letter-spacing: 1px; }
+
+  /* PROCESS */
+  #process { background: var(--steel); }
+
+  .process-steps {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+    margin-top: 4rem;
+    position: relative;
+  }
+
+  .process-steps::before {
+    content: '';
+    position: absolute;
+    top: 22px;
+    left: 12%;
+    right: 12%;
+    height: 1px;
+    background: rgba(212,130,42,0.3);
+  }
+
+  .process-step {
+    padding: 0 1.5rem;
+    text-align: center;
+    position: relative;
+  }
+
+  .step-dot {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: var(--charcoal);
+    border: 2px solid var(--accent);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.2rem;
+    color: var(--accent);
+    position: relative;
+    z-index: 1;
+  }
+
+  .step-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.2rem;
+    letter-spacing: 0.05em;
+    color: var(--white);
+    margin-bottom: 0.5rem;
+  }
+
+  .step-desc {
+    font-size: 0.82rem;
+    color: var(--slate);
+    line-height: 1.6;
+  }
+
+  /* CONTACT */
+  #contact { background: var(--charcoal); }
+
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: start;
+  }
+
+  .contact-info-block {
+    margin-bottom: 2rem;
+  }
+
+  .contact-label {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--accent);
+    font-weight: 500;
+    margin-bottom: 0.4rem;
+  }
+
+  .contact-value {
+    font-size: 1.1rem;
+    color: var(--cream);
+    font-weight: 300;
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  a.contact-value:hover { color: var(--accent); }
+
+  .contact-form {
+    background: var(--steel);
+    border: 1px solid rgba(255,255,255,0.08);
+    padding: 2.5rem;
+  }
+
+  .form-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.8rem;
+    color: var(--white);
+    letter-spacing: 0.05em;
+    margin-bottom: 1.75rem;
+  }
+
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+
+  .form-group { margin-bottom: 1rem; }
+  .form-group label {
+    display: block;
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--slate);
+    margin-bottom: 0.4rem;
+    font-weight: 500;
+  }
+
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    width: 100%;
+    background: var(--charcoal);
+    border: 1px solid rgba(255,255,255,0.1);
+    color: var(--cream);
+    padding: 0.75rem 1rem;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.9rem;
+    border-radius: 2px;
+    transition: border-color 0.2s;
+    outline: none;
+  }
+
+  .form-group input:focus,
+  .form-group select:focus,
+  .form-group textarea:focus {
+    border-color: var(--accent);
+  }
+
+  .form-group textarea { resize: vertical; min-height: 100px; }
+
+  .form-group select option { background: var(--charcoal); }
+
+  .form-submit {
+    width: 100%;
+    background: var(--accent);
+    color: var(--white);
+    border: none;
+    padding: 1rem;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    cursor: pointer;
+    border-radius: 2px;
+    transition: all 0.2s;
+    margin-top: 0.5rem;
+  }
+  .form-submit:hover { background: var(--accent-light); transform: translateY(-1px); }
+
+  /* FOOTER */
+  footer {
+    background: #111;
+    border-top: 1px solid rgba(255,255,255,0.06);
+    padding: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+  }
+
+  .footer-logo {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.3rem;
+    letter-spacing: 0.1em;
+    color: var(--white);
+  }
+  .footer-logo span { color: var(--accent); }
+
+  .footer-tagline {
+    font-size: 0.8rem;
+    color: var(--slate);
+    margin-top: 0.25rem;
+  }
+
+  .footer-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+    flex-wrap: wrap;
+  }
+  .footer-links a {
+    font-size: 0.78rem;
+    color: var(--slate);
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    transition: color 0.2s;
+  }
+  .footer-links a:hover { color: var(--accent); }
+
+  .footer-copy {
+    font-size: 0.75rem;
+    color: #444;
+  }
+
+  /* ANIMATIONS */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .hero-eyebrow { animation: fadeUp 0.6s ease 0.1s both; }
+  .hero-title { animation: fadeUp 0.6s ease 0.2s both; }
+  .hero-sub { animation: fadeUp 0.6s ease 0.35s both; }
+  .hero-actions { animation: fadeUp 0.6s ease 0.45s both; }
+  .hero-stats { animation: fadeUp 0.6s ease 0.55s both; }
+
+  /* AREA BAND */
+  .area-band {
+    background: var(--accent);
+    padding: 1rem 3rem;
+    text-align: center;
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--white);
+  }
+
+  /* RESPONSIVE */
+  @media (max-width: 900px) {
+    nav { padding: 1rem 1.5rem; }
+    .nav-links { display: none; }
+    .hero { grid-template-columns: 1fr; }
+    .hero-right { min-height: 320px; position: relative; }
+    .hero-left { padding: 3rem 1.5rem; }
+    section { padding: 4rem 1.5rem; }
+    .about-grid, .contact-grid { grid-template-columns: 1fr; gap: 3rem; }
+    .services-grid { grid-template-columns: 1fr; }
+    .reviews-grid { grid-template-columns: 1fr; }
+    .process-steps { grid-template-columns: 1fr 1fr; }
+    .process-steps::before { display: none; }
+    .form-row { grid-template-columns: 1fr; }
+    .trust-bar { padding: 1rem 1.5rem; gap: 1.5rem; }
+    footer { padding: 2rem 1.5rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">Mount <span>Roof</span> Services</a>
+  <ul class="nav-links">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#reviews">Reviews</a></li>
+    <li><a href="#process">Process</a></li>
+    <li><a href="#contact" class="nav-cta">Free Quote</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-left">
+    <div class="hero-eyebrow">Tauranga · Mount Maunganui · Bay of Plenty</div>
+    <h1 class="hero-title">Roofs<br>Built to<br><em>Last.</em></h1>
+    <p class="hero-sub">Leading installer of residential and commercial customised roof installations across Tauranga and the Bay of Plenty — all with comprehensive warranties and honest advice from day one.</p>
+    <div class="hero-actions">
+      <a href="#contact" class="btn-primary">Get a Free Quote</a>
+      <a href="#services" class="btn-outline">Our Services</a>
+    </div>
+    <div class="hero-stats">
+      <div>
+        <div class="hero-stat-num">5.0</div>
+        <div class="hero-stat-label">Google Rating</div>
+      </div>
+      <div>
+        <div class="hero-stat-num">135+</div>
+        <div class="hero-stat-label">Happy Clients</div>
+      </div>
+      <div>
+        <div class="hero-stat-num">LBP</div>
+        <div class="hero-stat-label">Licensed Builder</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-right">
+    <div class="hero-img-container">
+      <!-- Decorative architectural SVG illustration -->
+      <svg class="roof-pattern" viewBox="0 0 700 800" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+        <rect width="700" height="800" fill="#2c2f35"/>
+        <!-- House silhouettes background -->
+        <polygon points="0,800 0,480 80,340 160,480 160,800" fill="#222529"/>
+        <polygon points="140,800 140,420 240,270 340,420 340,800" fill="#25282d"/>
+        <polygon points="300,800 300,460 410,300 520,460 520,800" fill="#222529"/>
+        <polygon points="480,800 480,440 580,290 680,440 680,800" fill="#1e2024"/>
+        <!-- Detail lines on roofs -->
+        <line x1="80" y1="340" x2="80" y2="800" stroke="#3e4249" stroke-width="1"/>
+        <line x1="240" y1="270" x2="240" y2="800" stroke="#3e4249" stroke-width="1"/>
+        <line x1="410" y1="300" x2="410" y2="800" stroke="#3e4249" stroke-width="1"/>
+        <line x1="580" y1="290" x2="580" y2="800" stroke="#3e4249" stroke-width="1"/>
+        <!-- Roof tiles suggestion -->
+        <g opacity="0.15" stroke="#d4822a" stroke-width="0.5" fill="none">
+          <line x1="0" y1="560" x2="700" y2="560"/>
+          <line x1="0" y1="600" x2="700" y2="600"/>
+          <line x1="0" y1="640" x2="700" y2="640"/>
+          <line x1="0" y1="680" x2="700" y2="680"/>
+          <line x1="0" y1="720" x2="700" y2="720"/>
+          <line x1="0" y1="760" x2="700" y2="760"/>
+        </g>
+        <!-- Accent lines -->
+        <line x1="0" y1="200" x2="700" y2="200" stroke="#d4822a" stroke-width="0.5" opacity="0.2"/>
+        <!-- Grid overlay -->
+        <g opacity="0.04" stroke="#ffffff" stroke-width="0.5">
+          <line x1="100" y1="0" x2="100" y2="800"/>
+          <line x1="200" y1="0" x2="200" y2="800"/>
+          <line x1="300" y1="0" x2="300" y2="800"/>
+          <line x1="400" y1="0" x2="400" y2="800"/>
+          <line x1="500" y1="0" x2="500" y2="800"/>
+          <line x1="600" y1="0" x2="600" y2="800"/>
+          <line x1="0" y1="100" x2="700" y2="100"/>
+          <line x1="0" y1="200" x2="700" y2="200"/>
+          <line x1="0" y1="300" x2="700" y2="300"/>
+          <line x1="0" y1="400" x2="700" y2="400"/>
+          <line x1="0" y1="500" x2="700" y2="500"/>
+          <line x1="0" y1="600" x2="700" y2="600"/>
+          <line x1="0" y1="700" x2="700" y2="700"/>
+        </g>
+        <!-- Large decorative angle -->
+        <polygon points="350,0 700,250 700,0" fill="#d4822a" opacity="0.08"/>
+        <line x1="350" y1="0" x2="700" y2="250" stroke="#d4822a" stroke-width="1" opacity="0.3"/>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST BAR -->
+<div class="trust-bar">
+  <div class="trust-item"><div class="trust-dot"></div>Licensed Building Practitioner</div>
+  <div class="trust-item"><div class="trust-dot"></div>Comprehensive Warranties</div>
+  <div class="trust-item"><div class="trust-dot"></div>Free No-Obligation Quotes</div>
+  <div class="trust-item"><div class="trust-dot"></div>2–5 Day Completion Guarantee</div>
+  <div class="trust-item"><div class="trust-dot"></div>0800 MT ROOF</div>
+</div>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="section-inner">
+    <div class="section-label">What We Do</div>
+    <h2 class="section-title">Our <em>Services</em></h2>
+    <p style="color: var(--slate); font-size: 1rem; max-width: 500px; line-height: 1.7; font-weight: 300;">A new roof is one of the biggest investments you can make on your property. We'll make sure you get it right — the first time.</p>
+
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-num">01</div>
+        <div class="service-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#d4822a" stroke-width="1.5">
+            <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/>
+            <polyline points="9 22 9 12 15 12 15 22"/>
+          </svg>
+        </div>
+        <div class="service-name">Residential Roofing</div>
+        <p class="service-desc">New roof installations for homes across Tauranga and the Bay of Plenty. We tailor each solution to your property, using premium COLORSTEEL® materials rated for NZ conditions.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-num">02</div>
+        <div class="service-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#d4822a" stroke-width="1.5">
+            <rect x="3" y="3" width="18" height="18" rx="2"/>
+            <path d="M3 9h18M9 21V9"/>
+          </svg>
+        </div>
+        <div class="service-name">Commercial Roofing</div>
+        <p class="service-desc">Robust commercial roof solutions for businesses, offices and industrial buildings. Minimal disruption. Maximum durability. On time, every time.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-num">03</div>
+        <div class="service-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#d4822a" stroke-width="1.5">
+            <path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/>
+          </svg>
+        </div>
+        <div class="service-name">Roof Repairs</div>
+        <p class="service-desc">Leaks, storm damage, worn flashings — our team identifies the cause correctly and fixes it properly. We'll tell you if you need a repair, not a full re-roof.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-num">04</div>
+        <div class="service-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#d4822a" stroke-width="1.5">
+            <polyline points="23 4 23 10 17 10"/>
+            <path d="M20.49 15a9 9 0 11-2.12-9.36L23 10"/>
+          </svg>
+        </div>
+        <div class="service-name">Re-Roofing</div>
+        <p class="service-desc">Complete roof replacement for homes and buildings. We only remove what we can replace same day — your property stays weather-tight throughout the process.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-num">05</div>
+        <div class="service-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#d4822a" stroke-width="1.5">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+          </svg>
+        </div>
+        <div class="service-name">Insulation</div>
+        <p class="service-desc">We install quality insulation while your roof is open — the most cost-effective time to do it. Keep your home warm, dry and energy-efficient year-round.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-num">06</div>
+        <div class="service-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#d4822a" stroke-width="1.5">
+            <circle cx="12" cy="12" r="10"/>
+            <path d="M12 8v4l3 3"/>
+          </svg>
+        </div>
+        <div class="service-name">Roof Inspections</div>
+        <p class="service-desc">Pre-purchase and maintenance inspections — we give you an honest assessment of what you're working with, including clear photos and transparent recommendations.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="section-inner">
+    <div class="about-grid">
+      <div class="about-visual">
+        <div class="about-box">
+          <p class="about-quote">"He told us what he'd do and backed up everything he said with his work."</p>
+          <div class="about-attr">— Google Review, 5 Stars</div>
+          <div class="floating-badge">
+            <span class="badge-num">5.0</span>
+            <span class="badge-label">Google Rating</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="about-body">
+        <div class="section-label">About Us</div>
+        <h2 class="section-title">Andre <em>Quellin</em><br>& the Team</h2>
+        <p>Mount Roof Services is locally owned and operated, proudly servicing Tauranga, Papamoa, Mount Maunganui, Te Puke and the wider Bay of Plenty.</p>
+        <p>Led by Andre Quellin, our team is known for straight-talking advice, precision workmanship, and the kind of service that turns first-time customers into long-term clients. We don't upsell — if your carport doesn't need a new roof, we'll tell you.</p>
+        <p>Every job is backed by comprehensive warranties on both materials and workmanship. We use premium COLORSTEEL® — tested to NZ standards, built for our coastal climate.</p>
+
+        <div class="about-features">
+          <div class="about-feature">
+            <div class="feature-check">
+              <svg width="10" height="10" viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <span>Licensed Building Practitioner (LBP)</span>
+          </div>
+          <div class="about-feature">
+            <div class="feature-check">
+              <svg width="10" height="10" viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <span>Comprehensive material & workmanship warranty</span>
+          </div>
+          <div class="about-feature">
+            <div class="feature-check">
+              <svg width="10" height="10" viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <span>Same-day weather protection guaranteed</span>
+          </div>
+          <div class="about-feature">
+            <div class="feature-check">
+              <svg width="10" height="10" viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <span>Rotten timber replaced as part of service</span>
+          </div>
+          <div class="about-feature">
+            <div class="feature-check">
+              <svg width="10" height="10" viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <span>Honest pricing — no upsell, no surprises</span>
+          </div>
+          <div class="about-feature">
+            <div class="feature-check">
+              <svg width="10" height="10" viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <span>7 days a week availability</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section id="reviews">
+  <div class="section-inner">
+    <div class="reviews-header">
+      <div>
+        <div class="section-label">What Clients Say</div>
+        <h2 class="section-title">Real <em>Reviews</em></h2>
+      </div>
+      <div class="google-rating">
+        <div class="rating-num">5.0</div>
+        <div>
+          <span class="stars">★★★★★</span>
+          <span class="rating-label">135+ Google Reviews</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="reviews-grid">
+      <div class="review-card">
+        <div class="review-quote-mark">"</div>
+        <p class="review-text">Andre communicated clearly, arrived on time, and delivered with precision. The work was executed accurately down to the millimetre. What stood out most was his honesty and genuine pride in the craft.</p>
+        <div class="review-author">
+          <div class="reviewer-avatar">JT</div>
+          <div>
+            <div class="reviewer-name">J. Thompson</div>
+            <div class="reviewer-stars">★★★★★</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="review-card">
+        <div class="review-quote-mark">"</div>
+        <p class="review-text">We are so happy that we found Mount Roof Services! He provided options, honesty and a solution for our roof. Within days the job was complete. The team was tidy, polite and worked around our young family with ease.</p>
+        <div class="review-author">
+          <div class="reviewer-avatar">SL</div>
+          <div>
+            <div class="reviewer-name">Sarah L.</div>
+            <div class="reviewer-stars">★★★★★</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="review-card">
+        <div class="review-quote-mark">"</div>
+        <p class="review-text">He told us what he'd do and backed up everything he said with his work. 100% would recommend his advice and craftsmanship. Also pointed out that our carport roof didn't need replacing — saved us a lot of money.</p>
+        <div class="review-author">
+          <div class="reviewer-avatar">MR</div>
+          <div>
+            <div class="reviewer-name">Mike R.</div>
+            <div class="reviewer-stars">★★★★★</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section id="process">
+  <div class="section-inner">
+    <div class="section-label">How It Works</div>
+    <h2 class="section-title">Simple <em>Process</em></h2>
+
+    <div class="process-steps">
+      <div class="process-step">
+        <div class="step-dot">1</div>
+        <div class="step-title">Free Quote</div>
+        <p class="step-desc">We visit your property, inspect the roof, and give you a clear, itemised quote. No obligation, no hidden costs.</p>
+      </div>
+      <div class="process-step">
+        <div class="step-dot">2</div>
+        <div class="step-title">We Plan Together</div>
+        <p class="step-desc">We walk you through material options, colours, and timelines. You stay in control of every decision.</p>
+      </div>
+      <div class="process-step">
+        <div class="step-dot">3</div>
+        <div class="step-title">Professional Install</div>
+        <p class="step-desc">Our team installs your roof efficiently, keeping your home weather-tight throughout. 2–5 days for most projects.</p>
+      </div>
+      <div class="process-step">
+        <div class="step-dot">4</div>
+        <div class="step-title">Backed by Warranty</div>
+        <p class="step-desc">Comprehensive workmanship and materials warranties give you total peace of mind long after we've packed up.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AREA BAND -->
+<div class="area-band">
+  Proudly Serving: Tauranga &nbsp;·&nbsp; Mount Maunganui &nbsp;·&nbsp; Papamoa &nbsp;·&nbsp; Te Puke &nbsp;·&nbsp; Wider Bay of Plenty
+</div>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="section-inner">
+    <div class="contact-grid">
+      <div>
+        <div class="section-label">Get in Touch</div>
+        <h2 class="section-title">Free <em>Quote</em></h2>
+        <p style="color: var(--slate); font-size: 1rem; line-height: 1.7; font-weight: 300; max-width: 400px; margin-bottom: 3rem;">Ready to get started? We'll visit your property, give you an honest assessment, and a clear quote — all at no cost and no obligation.</p>
+
+        <div class="contact-info-block">
+          <div class="contact-label">Phone</div>
+          <a href="tel:02108573521" class="contact-value">021 085 7352</a><br>
+          <a href="tel:08006876631" class="contact-value" style="font-size:0.9rem; color: var(--slate);">0800 MT ROOF</a>
+        </div>
+
+        <div class="contact-info-block">
+          <div class="contact-label">Email</div>
+          <a href="mailto:quellinandre@gmail.com" class="contact-value">quellinandre@gmail.com</a>
+        </div>
+
+        <div class="contact-info-block">
+          <div class="contact-label">Location</div>
+          <span class="contact-value">445a Maunganui Road, Mount Maunganui</span>
+        </div>
+
+        <div class="contact-info-block">
+          <div class="contact-label">Hours</div>
+          <span class="contact-value">Monday – Sunday, 7am – 6pm</span>
+        </div>
+      </div>
+
+      <div>
+        <div class="contact-form">
+          <div class="form-title">Request a Quote</div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label>First Name</label>
+              <input type="text" placeholder="Andre">
+            </div>
+            <div class="form-group">
+              <label>Last Name</label>
+              <input type="text" placeholder="Smith">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Email</label>
+            <input type="email" placeholder="you@email.com">
+          </div>
+
+          <div class="form-group">
+            <label>Phone</label>
+            <input type="tel" placeholder="021 000 0000">
+          </div>
+
+          <div class="form-group">
+            <label>Service Required</label>
+            <select>
+              <option value="">Select a service...</option>
+              <option>New Roof Installation</option>
+              <option>Re-Roofing</option>
+              <option>Roof Repairs</option>
+              <option>Roof Inspection</option>
+              <option>Insulation</option>
+              <option>Commercial Roofing</option>
+              <option>Other</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label>Message</label>
+            <textarea placeholder="Tell us a bit about your project — property type, any existing issues, timeline..."></textarea>
+          </div>
+
+          <button class="form-submit">Send My Request →</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div>
+    <div class="footer-logo">Mount <span>Roof</span> Services</div>
+    <div class="footer-tagline">Tauranga · Bay of Plenty's Trusted Roofers</div>
+  </div>
+
+  <ul class="footer-links">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#reviews">Reviews</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+
+  <div class="footer-copy">© 2025 Mount Roof Services. LBP Licensed.</div>
+</footer>
+
+<script>
+  // Smooth nav scroll highlighting
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('.nav-links a');
+
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(s => {
+      if (window.scrollY >= s.offsetTop - 120) current = s.id;
+    });
+    navLinks.forEach(a => {
+      a.style.color = a.getAttribute('href') === '#' + current ? 'var(--accent)' : '';
+    });
+  });
+
+  // Form submit handler
+  document.querySelector('.form-submit').addEventListener('click', function(e) {
+    e.preventDefault();
+    this.textContent = 'Sent! We\'ll be in touch shortly.';
+    this.style.background = '#2d6a4f';
+    this.disabled = true;
+  });
+</script>
+
+</body>
+</html>
